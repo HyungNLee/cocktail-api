@@ -17,7 +17,6 @@ describe('cocktail.js', function() {
         return promise.then(function(response) {
             let body = JSON.parse(response);
             cocktail = body.drinks[0].strDrink;
-            console.log(cocktail);
             expect(cocktail).toEqual("Moscow Mule");
         });
     });
@@ -29,7 +28,6 @@ describe('cocktail.js', function() {
         return promise.then(function(response) {
             let body = JSON.parse(response);
             cocktail = body.drinks[1].strDrink;
-            console.log(cocktail);
             expect(cocktail).toEqual("155 Belmont");
         });
     });
@@ -41,8 +39,19 @@ describe('cocktail.js', function() {
         return promise.then(function(response) {
             let body = JSON.parse(response);
             cocktail = body.drinks[0].strDrink;
-            console.log(cocktail);
             expect(cocktail).toEqual("155 Belmont");
+        });
+    });
+
+    it('should grab all ingredients for cocktails', function() {
+        let promise = newCocktail.getAllIngredients();
+        let list;
+        
+        return promise.then(function(response) {
+            let body = JSON.parse(response);
+            list = body.drinks;
+            console.log(list.length);
+            expect(list.length).toEqual(160);
         });
     });
 });

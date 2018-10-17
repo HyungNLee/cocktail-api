@@ -19,23 +19,6 @@ export class Cocktail {
     });
   }
 
-//   searchIngredientByName(name) {
-//     return new Promise(function(resolve, reject) {
-//       let request = new XMLHttpRequest();
-//       let url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${name}`;
-
-//       request.onload = function() {
-//         if (this.status === 200) {
-//           resolve(request.response);
-//         } else {
-//           reject(Error(request.statusText));
-//         }
-//       };
-//       request.open("GET", url, true);
-//       request.send();
-//     });
-//   }
-
   searchCocktailById(id) {
     return new Promise(function(resolve, reject) {
         let request = new XMLHttpRequest();
@@ -70,27 +53,20 @@ export class Cocktail {
     });
   }
 
-  filterByAlcoholic() {
-    // Filters all cocktails by if it contains alcohol
-  }
-
-  filterByNonalcoholic() {
-    // Filters all cocktails by if it is non alcoholic.
-  }
-
-  filterByOrdinaryDrink() {
-    // Show all ordinary drinks
-  }
-
-  filterByCocktails() {
-    // Shows all cocktails
-  }
-
-  getAllCategories() {
-    // Lists all categories
-  }
-
   getAllIngredients() {
-    // Lists all ingredients
+    return new Promise(function(resolve, reject) {
+        let request = new XMLHttpRequest();
+        let url = `https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list`;
+  
+        request.onload = function() {
+          if (this.status === 200) {
+            resolve(request.response);
+          } else {
+            reject(Error(request.statusText));
+          }
+        };
+        request.open("GET", url, true);
+        request.send();
+    });
   }
 }

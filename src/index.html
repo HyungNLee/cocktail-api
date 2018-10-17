@@ -1,9 +1,126 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CocktailApi</title>
+    <title>Cocktail Database</title>
   </head>
   <body>
-    <p>CocktailApi</p>
+    <div class="container">
+      <h1>Find your cocktail</h1>
+      <hr>
+      <h3>Search by cocktail name</h3>
+      <form id="search-by-name">
+        <label for="nameInput">Enter Cocktail Name: </label>
+        <input id="nameInput" type="text">
+        <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#searchByNameModal" data->Submit</button>
+      </form>
+      <hr>
+      <h3>Search by ingredient</h3>
+
+      <button type="button" id="ingredientList" class="btn btn-warning" data-toggle="modal" data-target="#showIngredients" data->Show ingredient list</button>
+
+      <form id="search-by-ingredient">
+        <label for="ingredientInput">Enter Ingredient Name: </label>
+        <input id="ingredientInput" type="text">
+        <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#searchByIngredientModal" data->Submit</button>
+      </form>
+
+      <hr>
+      <h3>Search by Cocktail ID</h3>
+      <form id="search-by-id">
+        <label for="idInput">Enter ID: </label>
+        <input id="idInput" type="text">
+        <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#searchByIdModal" data->Submit</button>
+      </form>
+    </div>
+
+
+    <!-- Modal for Ingredients -->
+    <div class="modal-container">
+      <div class="modal fade" id="showIngredients" tabindex="-1" role="dialog" aria-labelledby="ingredientListAll" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ingredientListAll">List of All Ingredients</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <ul id="ingredient-modal-body">
+
+              </ul>
+              <!-- Added dynamically through main.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for search by ingredient -->
+    <div class="modal-container">
+        <div class="modal fade" id="searchByIngredientModal" tabindex="-1" role="dialog" aria-labelledby="searchByIngredient" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="searchByIngredient">List of All Cocktails by Ingredient Search</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <ul id="searchByIngredientBody">
+  
+                </ul>
+                <!-- Added dynamically through main.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for search by id -->
+    <div class="modal-container">
+        <div class="modal fade" id="searchByIdModal" tabindex="-1" role="dialog" aria-labelledby="searchById" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="searchById">List of All Cocktails by Id Search</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <ul id="searchByIdBody">
+  
+                </ul>
+                <!-- Added dynamically through main.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for search by ingredient -->
+    <div class="modal-container">
+        <div class="modal fade" id="searchByNameModal" tabindex="-1" role="dialog" aria-labelledby="searchByName" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="searchByName">Search result by name</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <ul id="searchByNameBody">
+  
+                </ul>
+                <!-- Added dynamically through main.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
   </body>
 </html>
